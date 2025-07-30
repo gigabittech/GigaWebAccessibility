@@ -3,6 +3,51 @@
 @tailwind utilities;
 
 :root {
+  --background: hsl(220, 27%, 8%);
+  --foreground: hsl(0, 0%, 95%);
+  --muted: hsl(220, 15%, 15%);
+  --muted-foreground: hsl(220, 10%, 65%);
+  --popover: hsl(220, 27%, 10%);
+  --popover-foreground: hsl(0, 0%, 95%);
+  --card: hsl(220, 27%, 10%);
+  --card-foreground: hsl(0, 0%, 95%);
+  --border: hsl(220, 15%, 20%);
+  --input: hsl(220, 15%, 20%);
+  --primary: hsl(210, 100%, 50%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(220, 15%, 15%);
+  --secondary-foreground: hsl(0, 0%, 95%);
+  --accent: hsl(220, 15%, 15%);
+  --accent-foreground: hsl(0, 0%, 95%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --ring: hsl(210, 100%, 50%);
+  --radius: 0.75rem;
+  
+  /* Modern dark theme colors */
+  --blue-50: hsl(214, 100%, 97%);
+  --blue-100: hsl(214, 95%, 93%);
+  --blue-500: hsl(210, 100%, 50%);
+  --blue-600: hsl(210, 100%, 45%);
+  --blue-700: hsl(210, 100%, 40%);
+  
+  --cyan-100: hsl(185, 96%, 53%);
+  --cyan-500: hsl(188, 78%, 41%);
+  --cyan-600: hsl(191, 83%, 36%);
+  
+  --purple-100: hsl(270, 95%, 94%);
+  --purple-500: hsl(271, 81%, 56%);
+  
+  --gray-800: hsl(220, 15%, 20%);
+  --gray-900: hsl(220, 27%, 8%);
+  --gray-700: hsl(220, 13%, 25%);
+  --gray-600: hsl(220, 10%, 40%);
+  --gray-400: hsl(220, 10%, 65%);
+  --gray-200: hsl(220, 5%, 85%);
+  --gray-100: hsl(220, 3%, 92%);
+}
+
+.light {
   --background: hsl(0, 0%, 100%);
   --foreground: hsl(222, 84%, 4.9%);
   --muted: hsl(210, 40%, 98%);
@@ -13,62 +58,15 @@
   --card-foreground: hsl(222, 84%, 4.9%);
   --border: hsl(214, 32%, 91%);
   --input: hsl(214, 32%, 91%);
-  --primary: hsl(246, 77%, 63%);
-  --primary-foreground: hsl(210, 40%, 98%);
+  --primary: hsl(210, 100%, 50%);
+  --primary-foreground: hsl(0, 0%, 100%);
   --secondary: hsl(210, 40%, 96%);
   --secondary-foreground: hsl(222, 84%, 4.9%);
   --accent: hsl(210, 40%, 96%);
   --accent-foreground: hsl(222, 84%, 4.9%);
   --destructive: hsl(0, 84%, 60%);
-  --destructive-foreground: hsl(210, 40%, 98%);
-  --ring: hsl(246, 77%, 63%);
-  --radius: 0.75rem;
-  
-  /* Custom accessibility theme colors */
-  --primary-50: hsl(246, 100%, 97%);
-  --primary-100: hsl(246, 88%, 92%);
-  --primary-500: hsl(246, 77%, 63%);
-  --primary-600: hsl(246, 82%, 57%);
-  --primary-700: hsl(246, 87%, 51%);
-  
-  --emerald-50: hsl(152, 76%, 96%);
-  --emerald-100: hsl(152, 81%, 89%);
-  --emerald-500: hsl(160, 84%, 39%);
-  --emerald-600: hsl(161, 94%, 30%);
-  
-  --violet-100: hsl(270, 95%, 94%);
-  --violet-500: hsl(271, 81%, 56%);
-  
-  --amber-100: hsl(48, 96%, 89%);
-  --amber-500: hsl(45, 93%, 47%);
-  
-  --blue-100: hsl(214, 95%, 93%);
-  --blue-500: hsl(217, 91%, 60%);
-  
-  --red-100: hsl(0, 93%, 94%);
-  --red-500: hsl(0, 84%, 60%);
-}
-
-.dark {
-  --background: hsl(222, 84%, 4.9%);
-  --foreground: hsl(210, 40%, 98%);
-  --muted: hsl(217, 32%, 17.5%);
-  --muted-foreground: hsl(215, 20%, 65%);
-  --popover: hsl(222, 84%, 4.9%);
-  --popover-foreground: hsl(210, 40%, 98%);
-  --card: hsl(222, 84%, 4.9%);
-  --card-foreground: hsl(210, 40%, 98%);
-  --border: hsl(217, 32%, 17.5%);
-  --input: hsl(217, 32%, 17.5%);
-  --primary: hsl(246, 77%, 63%);
-  --primary-foreground: hsl(222, 84%, 4.9%);
-  --secondary: hsl(217, 32%, 17.5%);
-  --secondary-foreground: hsl(210, 40%, 98%);
-  --accent: hsl(217, 32%, 17.5%);
-  --accent-foreground: hsl(210, 40%, 98%);
-  --destructive: hsl(0, 62%, 30%);
-  --destructive-foreground: hsl(210, 40%, 98%);
-  --ring: hsl(246, 77%, 63%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --ring: hsl(210, 100%, 50%);
 }
 
 @layer base {
@@ -81,39 +79,38 @@
   }
 }
 
-/* Custom accessibility theme utilities */
-.bg-primary-50 { background-color: hsl(var(--primary-50)); }
-.bg-primary-100 { background-color: hsl(var(--primary-100)); }
-.bg-primary-500 { background-color: hsl(var(--primary-500)); }
-.bg-primary-600 { background-color: hsl(var(--primary-600)); }
-.bg-primary-700 { background-color: hsl(var(--primary-700)); }
-
-.bg-emerald-50 { background-color: hsl(var(--emerald-50)); }
-.bg-emerald-100 { background-color: hsl(var(--emerald-100)); }
-.bg-emerald-500 { background-color: hsl(var(--emerald-500)); }
-.bg-emerald-600 { background-color: hsl(var(--emerald-600)); }
-
-.bg-violet-100 { background-color: hsl(var(--violet-100)); }
-.bg-violet-500 { background-color: hsl(var(--violet-500)); }
-
-.bg-amber-100 { background-color: hsl(var(--amber-100)); }
-.bg-amber-500 { background-color: hsl(var(--amber-500)); }
-
+/* Modern dark theme utilities */
+.bg-blue-50 { background-color: hsl(var(--blue-50)); }
 .bg-blue-100 { background-color: hsl(var(--blue-100)); }
 .bg-blue-500 { background-color: hsl(var(--blue-500)); }
+.bg-blue-600 { background-color: hsl(var(--blue-600)); }
+.bg-blue-700 { background-color: hsl(var(--blue-700)); }
 
-.bg-red-100 { background-color: hsl(var(--red-100)); }
-.bg-red-500 { background-color: hsl(var(--red-500)); }
+.bg-cyan-100 { background-color: hsl(var(--cyan-100)); }
+.bg-cyan-500 { background-color: hsl(var(--cyan-500)); }
+.bg-cyan-600 { background-color: hsl(var(--cyan-600)); }
 
-.text-primary-500 { color: hsl(var(--primary-500)); }
-.text-primary-600 { color: hsl(var(--primary-600)); }
-.text-primary-700 { color: hsl(var(--primary-700)); }
+.bg-purple-100 { background-color: hsl(var(--purple-100)); }
+.bg-purple-500 { background-color: hsl(var(--purple-500)); }
 
-.text-emerald-500 { color: hsl(var(--emerald-500)); }
-.text-violet-500 { color: hsl(var(--violet-500)); }
-.text-amber-500 { color: hsl(var(--amber-500)); }
+.bg-gray-800 { background-color: hsl(var(--gray-800)); }
+.bg-gray-900 { background-color: hsl(var(--gray-900)); }
+.bg-gray-700 { background-color: hsl(var(--gray-700)); }
+.bg-gray-600 { background-color: hsl(var(--gray-600)); }
+
 .text-blue-500 { color: hsl(var(--blue-500)); }
-.text-red-500 { color: hsl(var(--red-500)); }
+.text-blue-600 { color: hsl(var(--blue-600)); }
+.text-blue-700 { color: hsl(var(--blue-700)); }
 
-.hover\:bg-primary-600:hover { background-color: hsl(var(--primary-600)); }
-.hover\:bg-emerald-600:hover { background-color: hsl(var(--emerald-600)); }
+.text-cyan-500 { color: hsl(var(--cyan-500)); }
+.text-purple-500 { color: hsl(var(--purple-500)); }
+.text-gray-400 { color: hsl(var(--gray-400)); }
+.text-gray-200 { color: hsl(var(--gray-200)); }
+.text-gray-100 { color: hsl(var(--gray-100)); }
+
+.hover\:bg-blue-600:hover { background-color: hsl(var(--blue-600)); }
+.hover\:bg-cyan-600:hover { background-color: hsl(var(--cyan-600)); }
+
+/* Gradient utilities */
+.gradient-blue { background: linear-gradient(135deg, hsl(var(--blue-500)), hsl(var(--cyan-500))); }
+.gradient-text { background: linear-gradient(135deg, hsl(var(--blue-500)), hsl(var(--cyan-500))); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }

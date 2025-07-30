@@ -6,70 +6,70 @@ const features = [
     icon: Search,
     title: "Automated Auditing",
     description: "Comprehensive automated scans that identify accessibility issues across your entire website with detailed reporting.",
-    bgColor: "bg-primary-100",
-    iconColor: "text-primary-500"
+    bgColor: "bg-blue-500/10",
+    iconColor: "text-blue-500"
   },
   {
     icon: Palette,
     title: "Color Highlighting",
     description: "Automatic detection and highlighting of color contrast issues to ensure WCAG compliance standards.",
-    bgColor: "bg-amber-100",
-    iconColor: "text-amber-500"
+    bgColor: "bg-cyan-500/10",
+    iconColor: "text-cyan-500"
   },
   {
     icon: CheckCircle,
     title: "WCAG Compliance",
     description: "Full compliance with WCAG 2.1 AA guidelines ensuring your website meets international accessibility standards.",
-    bgColor: "bg-emerald-100",
-    iconColor: "text-emerald-500"
+    bgColor: "bg-purple-500/10",
+    iconColor: "text-purple-500"
   },
   {
     icon: Volume2,
     title: "Screen Reader Support",
     description: "Enhanced screen reader compatibility with proper ARIA labels and semantic markup optimization.",
-    bgColor: "bg-violet-100",
-    iconColor: "text-violet-500"
+    bgColor: "bg-blue-500/10",
+    iconColor: "text-blue-500"
   },
   {
     icon: BarChart3,
     title: "Analytics & Insights",
     description: "Detailed analytics and insights to track accessibility improvements and compliance progress over time.",
-    bgColor: "bg-blue-100",
-    iconColor: "text-blue-500"
+    bgColor: "bg-cyan-500/10",
+    iconColor: "text-cyan-500"
   },
   {
     icon: FileText,
     title: "Compliance Reporting",
     description: "Automated compliance reports and documentation to demonstrate accessibility adherence for audits.",
-    bgColor: "bg-red-100",
-    iconColor: "text-red-500"
+    bgColor: "bg-purple-500/10",
+    iconColor: "text-purple-500"
   }
 ];
 
 export default function FeaturesSection() {
   return (
-    <section className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+    <section className="py-24 px-6 bg-background">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Everything You Need for Complete Accessibility
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Comprehensive tools and insights to ensure your website meets all accessibility standards
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <Card key={index} className="border border-slate-100 hover:shadow-lg transition-shadow">
+            <Card key={index} className="bg-card border border-border hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm">
               <CardContent className="p-8">
-                <div className={`w-12 h-12 ${feature.bgColor} rounded-lg flex items-center justify-center mb-6`}>
-                  <feature.icon className={`${feature.iconColor} w-6 h-6`} />
+                <div className={`w-16 h-16 ${feature.bgColor} rounded-2xl flex items-center justify-center mb-6 border border-border/50`}>
+                  <feature.icon className={`${feature.iconColor} w-8 h-8`} />
                 </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">
+                <h3 className="text-xl font-semibold text-foreground mb-4">
                   {feature.title}
                 </h3>
-                <p className="text-slate-600 leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed">
                   {feature.description}
                 </p>
               </CardContent>

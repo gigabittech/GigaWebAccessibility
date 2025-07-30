@@ -20,14 +20,14 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-slate-200 z-50">
-      <div className="max-w-6xl mx-auto px-6 py-4">
+    <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-md border-b border-border z-50">
+      <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-violet-500 rounded-lg flex items-center justify-center">
-              <Shield className="w-4 h-4 text-white" />
+          <Link href="/" className="flex items-center space-x-3">
+            <div className="w-10 h-10 gradient-blue rounded-xl flex items-center justify-center shadow-lg">
+              <Shield className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-semibold text-slate-900">
+            <span className="text-xl font-bold text-foreground">
               Giga Web Accessibility
             </span>
           </Link>
@@ -39,10 +39,10 @@ export default function Navigation() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "transition-colors hover:text-slate-900",
+                  "text-sm font-medium transition-colors hover:text-blue-500",
                   isActive(item.href)
-                    ? "text-primary-500 font-semibold"
-                    : "text-slate-600"
+                    ? "text-blue-500 font-semibold"
+                    : "text-muted-foreground"
                 )}
               >
                 {item.label}
@@ -68,17 +68,17 @@ export default function Navigation() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pt-4 border-t border-slate-200">
+          <div className="md:hidden mt-4 pt-4 border-t border-border">
             <div className="space-y-4">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "block transition-colors hover:text-slate-900",
+                    "block text-sm font-medium transition-colors hover:text-blue-500",
                     isActive(item.href)
-                      ? "text-primary-500 font-semibold"
-                      : "text-slate-600"
+                      ? "text-blue-500 font-semibold"
+                      : "text-muted-foreground"
                   )}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a full-stack web application for a web accessibility service called "Giga Web Accessibility". The application provides automated accessibility auditing, compliance monitoring, and reporting tools for websites, with specific integrations for WordPress and Shopify platforms.
+This is a full-stack web application for a web accessibility service called "Giga Web Accessibility". The application provides automated accessibility auditing, compliance monitoring, and reporting tools for websites, with specific integrations for WordPress and Shopify platforms. The UI features a modern dark theme design inspired by contemporary SaaS platforms with blue and cyan accent colors.
 
 ## User Preferences
 
@@ -34,10 +34,11 @@ Preferred communication style: Simple, everyday language.
 ## Key Components
 
 ### Frontend Components
-- **Navigation**: Fixed header with responsive mobile menu
-- **Pages**: Home, Setup Guide, Documentation, and 404 pages
-- **UI Library**: Complete shadcn/ui component set including forms, dialogs, cards, etc.
-- **Accessibility Focus**: Custom color themes and WCAG-compliant design
+- **Navigation**: Fixed header with responsive mobile menu featuring modern dark theme
+- **Pages**: Home, Setup Guide, Documentation, and 404 pages with cohesive dark styling
+- **UI Library**: Complete shadcn/ui component set with custom dark theme styling
+- **Design System**: Modern dark theme with blue/cyan gradients, glass morphism effects, and enhanced typography
+- **Accessibility Focus**: WCAG-compliant design with high contrast ratios and semantic markup
 
 ### Backend Services
 - **Storage Interface**: Abstracted storage layer with in-memory implementation
