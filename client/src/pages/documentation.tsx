@@ -1,4 +1,5 @@
 import Navigation from "@/components/navigation";
+import Footer from "@/components/footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Rocket, Settings, Code, Wrench, Circle } from "lucide-react";
 
@@ -196,6 +197,7 @@ export default function Documentation() {
           </Card>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

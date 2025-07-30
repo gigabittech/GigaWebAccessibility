@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Shield } from "lucide-react";
+import { ArrowRight, Accessibility } from "lucide-react";
 import { SiWordpress, SiShopify } from "react-icons/si";
 
 export default function HeroSection() {
@@ -12,22 +12,20 @@ export default function HeroSection() {
       <div className="max-w-5xl mx-auto text-center relative z-10">
         <div className="mb-12">
           <Badge variant="secondary" className="mb-8 bg-blue-500/10 text-blue-500 border border-blue-500/20 hover:bg-blue-500/20">
-            <Shield className="w-4 h-4 mr-2" />
+            <Accessibility className="w-4 h-4 mr-2" />
             WCAG 2.1 AA Compliant
           </Badge>
           
           <h1 className="text-6xl md:text-7xl font-bold text-foreground mb-8 leading-tight">
-            Where amazing<br />
+            Make Your Website<br />
             <span className="gradient-text">
-              customer experiences
+              Accessible to Everyone
             </span>
-            <br />
-            begin
           </h1>
           
           <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
-            Build and scale customer experience with our all-in-one web accessibility platform.
-            Automated auditing, real-time monitoring, and comprehensive compliance reporting.
+            Automated accessibility auditing, real-time monitoring, and comprehensive WCAG compliance reporting 
+            for WordPress and Shopify platforms.
           </p>
         </div>
 

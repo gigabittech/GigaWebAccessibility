@@ -1,4 +1,5 @@
 import Navigation from "@/components/navigation";
+import Footer from "@/components/footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { SiWordpress, SiShopify } from "react-icons/si";
@@ -137,6 +138,7 @@ export default function SetupGuide() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

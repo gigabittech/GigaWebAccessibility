@@ -1,7 +1,7 @@
 import { Link, useLocation } from "wouter";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Shield } from "lucide-react";
+import { Menu, X, Accessibility } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export default function Navigation() {
@@ -25,7 +25,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-3">
             <div className="w-10 h-10 gradient-blue rounded-xl flex items-center justify-center shadow-lg">
-              <Shield className="w-5 h-5 text-white" />
+              <Accessibility className="w-5 h-5 text-white" />
             </div>
             <span className="text-xl font-bold text-foreground">
               Giga Web Accessibility
