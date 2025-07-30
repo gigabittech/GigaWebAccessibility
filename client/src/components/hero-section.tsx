@@ -33,7 +33,7 @@ export default function HeroSection() {
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20">
           <Button
             size="lg"
-            className="group bg-blue-500 hover:bg-blue-600 text-white px-10 py-5 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105"
+            className="group bg-blue-500 hover:bg-blue-600 text-white border-2 border-blue-500 hover:border-blue-600 px-10 py-5 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105"
           >
             <SiWordpress className="w-6 h-6 mr-4" />
             WordPress Plugin
