@@ -10,8 +10,8 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-cyan-500/10"></div>
       
       <div className="max-w-5xl mx-auto text-center relative z-10">
-        <div className="mb-12">
-          <Badge variant="secondary" className="mb-8 bg-blue-500/10 text-blue-500 border border-blue-500/20 hover:bg-blue-500/20">
+        <div className="mb-12 pt-8">
+          <Badge variant="secondary" className="mb-8 mt-4 bg-blue-500/10 text-blue-500 border border-blue-500/20 hover:bg-blue-500/20">
             <Accessibility className="w-4 h-4 mr-2" />
             WCAG 2.1 AA Compliant
           </Badge>
