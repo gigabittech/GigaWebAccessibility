@@ -16,8 +16,8 @@ export default function HeroSection() {
             WCAG 2.1 AA Compliant
           </Badge>
           
-          <h1 className="text-6xl md:text-7xl font-bold text-foreground mb-8 leading-tight">
-            Make Your Website<br />
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+            <span className="text-foreground">Make Your Website</span><br />
             <span className="gradient-text">
               Accessible to Everyone
             </span>
