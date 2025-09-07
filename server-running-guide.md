@@ -1,18 +1,80 @@
-# Server running guide
+# Server Running Guide
 
-## Step 1:
+This guide explains how to update and restart the Node.js server on Cloudways.
 
-Pull via Cloudways 
+---
 
-## Step 2
-Stop the pm2 server using 'pm2 stop processId | name' or delete the process via pm2 delete prodeceId | process-name &
-Remove node_modules & dist/ directory
+## Step 1: Pull the latest code
 
-## Step 3 
-npm install && npm run build
+Pull the latest version of your repository from GitHub:
 
-## Step 4
-Restart the process pm2 start processId | process-name or
-pm2 start dist/index.js --name process-name
+```bash
+git pull origin main
+```
 
-# Completed the step
+Or clone if it’s the first setup:
+
+```bash
+git clone https://github.com/your-username/your-repo.git
+```
+
+---
+
+## Step 2: Stop the current PM2 process
+
+Stop or delete the existing Node.js process:
+
+```bash
+# Stop process by ID or name
+pm2 stop <process-id|process-name>
+
+# Delete process if needed
+pm2 delete <process-id|process-name>
+```
+
+Remove old dependencies and build directory:
+
+```bash
+rm -rf node_modules dist
+```
+
+---
+
+## Step 3: Install dependencies and build
+
+```bash
+npm install
+npm run build
+```
+
+---
+
+## Step 4: Start the server
+
+```bash
+# Start a new PM2 process
+pm2 start dist/index.js --name <process-name>
+
+# Or restart an existing process
+pm2 restart <process-id|process-name>
+
+# Save the PM2 process list to auto-start on reboot
+pm2 save
+```
+
+> ⚠️ Ensure your `.env` file exists in the root directory with all required variables (`PORT`, `DATABASE_URL`, `SESSION_SECRET`, etc.).
+
+---
+
+## Step 5: Verify the server
+
+```bash
+# Check logs for errors
+pm2 logs <process-name>
+```
+
+Visit your website to confirm everything is working.
+
+---
+
+✅ **Server update complete**
