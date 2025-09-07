@@ -3,6 +3,10 @@ import session from "express-session";
 import connectPgSimple from "connect-pg-simple";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+import dotenv from "dotenv";
+import path from "path";
+
+dotenv.config({ path: path.resolve(process.cwd(), ".env") });
 
 // Validate required environment variables
 const requiredEnvVars = {
@@ -15,8 +19,12 @@ const missingVars = Object.entries(requiredEnvVars)
   .map(([key]) => key);
 
 if (missingVars.length > 0) {
-  console.error(`❌ Missing required environment variables: ${missingVars.join(', ')}`);
-  console.error('Please ensure these variables are set in your deployment environment.');
+  console.error(
+    `❌ Missing required environment variables: ${missingVars.join(", ")}`
+  );
+  console.error(
+    "Please ensure these variables are set in your deployment environment."
+  );
   process.exit(1);
 }
 
@@ -29,21 +37,23 @@ const PgSession = connectPgSimple(session);
 const sessionStore = new PgSession({
   conString: process.env.DATABASE_URL,
   createTableIfMissing: false, // We'll create the table via Drizzle
-  tableName: 'sessions',
+  tableName: "sessions",
 });
 
 // Configure session middleware
-app.use(session({
-  store: sessionStore,
-  secret: process.env.SESSION_SECRET!,
-  resave: false,
-  saveUninitialized: false,
-  cookie: {
-    secure: process.env.NODE_ENV === 'production',
-    httpOnly: true,
-    maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
-  },
-}));
+app.use(
+  session({
+    store: sessionStore,
+    secret: process.env.SESSION_SECRET!,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      secure: process.env.NODE_ENV === "production",
+      httpOnly: true,
+      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+    },
+  })
+);
 
 app.use((req, res, next) => {
   const start = Date.now();
@@ -99,12 +109,18 @@ app.use((req, res, next) => {
   // Other ports are firewalled. Default to 5000 if not specified.
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
-  const port = parseInt(process.env.PORT || '5000', 10);
-  server.listen({
-    port,
-    host: "0.0.0.0",
-    reusePort: true,
-  }, () => {
-    log(`serving on port ${port}`);
-  });
+
+  const port = parseInt(process.env.PORT || "5000", 10);
+  const host = process.env.HOST || "127.0.0.1";
+
+  server.listen(
+    {
+      port,
+      host,
+      reusePort: process.env.REUSE_PORT || undefined
+    },
+    () => {
+      log(`serving on port ${port}`);
+    }
+  );
 })();
