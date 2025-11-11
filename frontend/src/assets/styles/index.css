@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(220, 27%, 8%);
+  --foreground: hsl(0, 0%, 95%);
+  --muted: hsl(220, 15%, 15%);
+  --muted-foreground: hsl(220, 10%, 65%);
+  --popover: hsl(220, 27%, 10%);
+  --popover-foreground: hsl(0, 0%, 95%);
+  --card: hsl(220, 27%, 10%);
+  --card-foreground: hsl(0, 0%, 95%);
+  --border: hsl(220, 15%, 20%);
+  --input: hsl(220, 15%, 20%);
+  --primary: hsl(210, 100%, 50%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(220, 15%, 15%);
+  --secondary-foreground: hsl(0, 0%, 95%);
+  --accent: hsl(220, 15%, 15%);
+  --accent-foreground: hsl(0, 0%, 95%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --ring: hsl(210, 100%, 50%);
+  --radius: 0.75rem;
+  
+  /* Modern dark theme colors */
+  --blue-50: hsl(214, 100%, 97%);
+  --blue-100: hsl(214, 95%, 93%);
+  --blue-500: hsl(210, 100%, 50%);
+  --blue-600: hsl(210, 100%, 45%);
+  --blue-700: hsl(210, 100%, 40%);
+  
+  --cyan-100: hsl(185, 96%, 53%);
+  --cyan-500: hsl(188, 78%, 41%);
+  --cyan-600: hsl(191, 83%, 36%);
+  
+  --purple-100: hsl(270, 95%, 94%);
+  --purple-500: hsl(271, 81%, 56%);
+  
+  --gray-800: hsl(220, 15%, 20%);
+  --gray-900: hsl(220, 27%, 8%);
+  --gray-700: hsl(220, 13%, 25%);
+  --gray-600: hsl(220, 10%, 40%);
+  --gray-400: hsl(220, 10%, 65%);
+  --gray-200: hsl(220, 5%, 85%);
+  --gray-100: hsl(220, 3%, 92%);
+}
+
+.light {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(222, 84%, 4.9%);
+  --muted: hsl(210, 40%, 98%);
+  --muted-foreground: hsl(215, 16%, 46.9%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(222, 84%, 4.9%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(222, 84%, 4.9%);
+  --border: hsl(214, 32%, 91%);
+  --input: hsl(214, 32%, 91%);
+  --primary: hsl(210, 100%, 50%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(210, 40%, 96%);
+  --secondary-foreground: hsl(222, 84%, 4.9%);
+  --accent: hsl(210, 40%, 96%);
+  --accent-foreground: hsl(222, 84%, 4.9%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --ring: hsl(210, 100%, 50%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* Modern dark theme utilities */
+.bg-blue-50 { background-color: hsl(var(--blue-50)); }
+.bg-blue-100 { background-color: hsl(var(--blue-100)); }
+.bg-blue-500 { background-color: hsl(var(--blue-500)); }
+.bg-blue-600 { background-color: hsl(var(--blue-600)); }
+.bg-blue-700 { background-color: hsl(var(--blue-700)); }
+
+.bg-cyan-100 { background-color: hsl(var(--cyan-100)); }
+.bg-cyan-500 { background-color: hsl(var(--cyan-500)); }
+.bg-cyan-600 { background-color: hsl(var(--cyan-600)); }
+
+.bg-purple-100 { background-color: hsl(var(--purple-100)); }
+.bg-purple-500 { background-color: hsl(var(--purple-500)); }
+
+.bg-gray-800 { background-color: hsl(var(--gray-800)); }
+.bg-gray-900 { background-color: hsl(var(--gray-900)); }
+.bg-gray-700 { background-color: hsl(var(--gray-700)); }
+.bg-gray-600 { background-color: hsl(var(--gray-600)); }
+
+.text-blue-500 { color: hsl(var(--blue-500)); }
+.text-blue-600 { color: hsl(var(--blue-600)); }
+.text-blue-700 { color: hsl(var(--blue-700)); }
+
+.text-cyan-500 { color: hsl(var(--cyan-500)); }
+.text-purple-500 { color: hsl(var(--purple-500)); }
+.text-gray-400 { color: hsl(var(--gray-400)); }
+.text-gray-200 { color: hsl(var(--gray-200)); }
+.text-gray-100 { color: hsl(var(--gray-100)); }
+
+.hover\:bg-blue-600:hover { background-color: hsl(var(--blue-600)); }
+.hover\:bg-cyan-600:hover { background-color: hsl(var(--cyan-600)); }
+
+/* Gradient utilities */
+.gradient-blue { 
+  background: linear-gradient(135deg, hsl(var(--blue-500)), hsl(var(--cyan-500)));
+}
+
+.gradient-text { 
+  background: linear-gradient(135deg, hsl(210, 100%, 50%), hsl(188, 78%, 41%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  /* Fallback for browsers that don't support background-clip */
+  color: hsl(210, 100%, 50%);
+}

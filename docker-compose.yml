@@ -1,0 +1,23 @@
+services:
+  app:
+    build: .
+    container_name: "${APP_NAME}_${NODE_ENV}"
+    env_file: .env
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_DB=${REDIS_DB}
+    volumes:
+      - /srv/redis/redis.password:/run/secrets/redis_password:ro
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.${APP_NAME}-${NODE_ENV}.rule=Host(`${APP_DOMAIN}`)"
+      - "traefik.http.routers.${APP_NAME}-${NODE_ENV}.entrypoints=websecure"
+      - "traefik.http.routers.${APP_NAME}-${NODE_ENV}.tls.certresolver=le"
+    networks:
+      - web
+    restart: unless-stopped
+
+networks:
+  web:
+    external: true
