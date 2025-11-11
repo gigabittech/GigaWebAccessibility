@@ -1,0 +1,10 @@
+name: Deploy from main workflow
+
+on:
+  push:
+    branches: [staging]
+
+jobs:
+  call-main-workflow:
+    uses: gigabittech/GigaWebAccessibility/.github/workflows/deploy.yml@main
+    secrets: inherit
